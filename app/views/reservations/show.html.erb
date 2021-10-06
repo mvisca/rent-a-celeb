@@ -1,0 +1,16 @@
+<div class="celebrity-photo d-flex">
+  <div class="celebrity-photo-show" style="background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.5)), url('<%= cl_image_path @reservation.celebrity.photo_url, crop: :fill, gravity: :face %>');">
+  </div>
+
+  <div class="celebrity-description">
+    <h1>Your Reservation:</h1>
+    <h2><%=@reservation.celebrity.first_name %> <%=@reservation.celebrity.last_name %></h2>
+    <p>From: <%=@reservation.reserve_begin%></p>
+    <p>To: <%=@reservation.reserve_end%></p>
+    <p><strong>Status: </strong><%=@reservation.status.capitalize %></p>
+    <% if @reservation.status == 'confirmed'%>
+      <%= link_to "Write a review", new_reservation_review_path(@reservation) %>
+    <% end %>
+     </p>
+  </div>
+</div>

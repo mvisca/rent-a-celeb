@@ -1,0 +1,15 @@
+.navbar-lewagon {
+  justify-content: space-between;
+  position: absolute;
+  top: 0;
+  padding: 12px 50px;
+  width: 100%;
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 80px;
+}

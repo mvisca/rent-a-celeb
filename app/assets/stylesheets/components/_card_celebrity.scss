@@ -1,0 +1,53 @@
+.card-celebrity {
+  background-size: cover;
+  background-position: center;
+  border-radius: 50%;
+  height: auto;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-top: 8px;
+  filter: grayscale(100%);
+  transition: all 0.3s;
+}
+
+.card-celebrity:hover {
+  filter: grayscale(0%);
+  transition: all 0.3s;
+}
+
+.card-celebrity-body {
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 0px auto 20px;
+  border-radius: 8px;
+}
+
+.celebrity-conteiner {
+  display: flex;
+  justify-content: space-between;
+}
+
+.stars {
+  margin-bottom: 2px;
+  display: flex;
+  justify-content: center;
+  font-size:8px;
+  color: rgb(241, 3, 71);
+  padding:0px;
+}
+
+
+
+.stars-for-show-celebrity {
+  color: rgb(241, 3, 71);
+}
