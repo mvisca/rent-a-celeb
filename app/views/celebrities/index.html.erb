@@ -1,45 +1,24 @@
 <div class="margin-top">
+
   <div class="col-6">
 
     <div class="container">
-      <h1 class="text-center mb-2" id="logo-font">Choose your favourite celebrity</h1>
 
-    <div class="search-bar mb-3 mt-4">
-      <div class="searchbar-form">
-        <%= form_tag celebrities_path, method: :get do %>
-          <%= text_field_tag :query,
-            params[:query],
-            class: "form-control border-right-0"
-          %>
-          <%= submit_tag "Search", class: "map-button border-0 rounded-left" %>
-        <% end %>
-      </div>
-    </div>
-      <div class="cards-index">
-        <% @celebrities.each do |celebrity| %>
-        <%= link_to celebrity_path(celebrity.id), class: "no-deco" do %>
-        <div class="celebrity-conteiner">
-          <div class="card-celebrity-body">
-            <div>
-              <a><%= cl_image_tag celebrity.photo.key, height: 300, width: 400, crop: :fill %></a>
-              <p class="text-center logo-font my-1 no-deco"><%= "#{celebrity.first_name} #{celebrity.last_name}" %></p>
-              <p class="text-center my-1 no-deco">150€/hour</p>
-              <ul class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="far fa-star"></i>
-                <i class="far fa-star"></i>
-                <i class="far fa-star"></i>
-              </ul>
-            </div>
-          </div>
+      <h1 class="text-center mb-3" id="logo-font">Choose your favourite celebrity</h1>
+
+      <div class="search-bar mb-3 mt-4">
+
+        <div class="searchbar-form">
+          <%= form_tag celebrities_path, method: :get do %>
+            <%= text_field_tag :query, params[:query], class: "form-control be-0" %>
+            <%= submit_tag "Search", class: "map-button border-0 rounded-left" %>
+          <% end %>
         </div>
-        <% end %>
-        <% end %>
       </div>
+      <%= render 'shared/card_celebrity', collection: @celebrities %>
     </div>
-
   </div>
+
   <div class="map-wrapper col-6">
     <div id="map"
        data-markers="<%= @markers.to_json %>"
@@ -47,4 +26,5 @@
        style="height: 100vh; position: sticky; top: 0; width: 100%;">
     </div>
   </div>
+
 </div>
